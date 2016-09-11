@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User registration</title>
+    <script src="check_username.js"></script>
+</head>
+<body onload="init()">
+<form action="register_user.php" method="POST">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" id="username_input" onblur="checkUsername()"/></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" id="password_input"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="Register"></td>
+        </tr>
+        <iframe id="hidden_frame" width="1" height="1" style="display:none"></iframe>
+    </table>
+</form>
+</body>
+</html>
