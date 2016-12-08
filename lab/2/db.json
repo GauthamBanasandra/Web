@@ -1,0 +1,20 @@
+{
+  "1PI13CS89": {
+    "usn": "1PI13CS89",
+    "name": "xyz",
+    "dept": 0,
+    "gpa": 9.12
+  },
+  "1PI13CS81": {
+    "usn": "1PI13CS81",
+    "name": "adb",
+    "dept": 0,
+    "gpa": 9.11
+  },
+  "1PI13IS81": {
+    "usn": "1PI13IS81",
+    "name": "adc",
+    "dept": 1,
+    "gpa": 9.11
+  }
+}
