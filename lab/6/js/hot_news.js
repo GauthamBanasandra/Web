@@ -11,8 +11,6 @@ function getNews()
         var newsLinks = getNewsLinks(doc);
 
         insertNews(newsLinks);
-        // debug.
-        console.log(newsLinks);
     });
 }
 

@@ -13,12 +13,12 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/get_news.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/hot_news.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/js/hot_news.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/js/jquery.min.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/rss.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../6/styles/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../3/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../6/js/hot_news.js" afterPath="$PROJECT_DIR$/../6/js/hot_news.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
