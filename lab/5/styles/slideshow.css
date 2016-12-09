@@ -1,0 +1,15 @@
+body {
+    background-color: dimgray;
+}
+
+.nav-buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 47.5%;
+}
+
+div#div_stage {
+    width: 400px;
+    height: 400px;
+    display:inline-block;
+}

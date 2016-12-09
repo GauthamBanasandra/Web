@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88754385-e419-4e63-806b-09c5af9980f3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../1/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../2/.idea/2.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../2/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../2/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../2/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/3.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/book_search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/book_search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/book_search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content_loader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/.idea/5.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/.idea/php.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/js/slideshow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/slideshow.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/styles/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../5/styles/slideshow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../1/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +29,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="book_search.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="book_search.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/book_search.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="114">
+              <caret line="6" column="95" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -74,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_loader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="content_loader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content_loader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+            <state relative-caret-position="171">
+              <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
               </folding>
@@ -266,12 +263,20 @@
       <option name="presentableId" value="Default" />
       <updated>1481248156666</updated>
       <workItem from="1481248159065" duration="3441000" />
-      <workItem from="1481255761156" duration="1923000" />
+      <workItem from="1481255761156" duration="3813000" />
     </task>
+    <task id="LOCAL-00001" summary="Multi-stage download.">
+      <created>1481257702687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481257702687</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5364000" />
+    <option name="totallyTimeSpent" value="7254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -302,6 +307,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Multi-stage download." />
+    <option name="LAST_COMMIT_MESSAGE" value="Multi-stage download." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -348,13 +357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/book_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -387,11 +389,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/content_loader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+        <state relative-caret-position="171">
+          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book_search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="95" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="6" selection-end-column="95" />
+          <folding />
         </state>
       </provider>
     </entry>
