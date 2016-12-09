@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule student_details.php/create/(\w+) student_details.php?cmd=create&usn=$1
+RewriteRule student_details.php/update/(\w+)/([a-z]+)/(\w+) student_details.php?cmd=update&usn=$1&param=$2&value=$3
+RewriteRule student_details.php/read/(\w+) student_details.php?cmd=read&usn=$1

@@ -1,0 +1,15 @@
+Instructions -
+1) Install apache -
+    sudo apt install apache2
+2) Install php 7 to run with apache2 -
+    sudo apt-get install libapache2-mod-php7.0 php7.0-mysql php7.0-curl php7.0-json
+3) Install a2enmod.
+4) Open in admin mode /etc/apache2/apache2.conf
+5) Go to
+    <Directory /var/www/>
+         Options Indexes FollowSymLinks
+         AllowOverride None
+         Require all granted
+    </Directory>
+    Change "AllowOverride None" to "AllowOverride All"
+6) Create .htaccess in any of the folders in /var/www/html.
