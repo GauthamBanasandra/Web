@@ -1,0 +1,12 @@
+.msg-window {
+    width: 600px;
+    height: 600px;
+    border: 2px solid dimgray;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.chat-window
+{
+    width: 600px;
+    height: 70px;
+}
