@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+</head>
+<body ng-app class="container">
+    <div class="row">
+        <div class="sm-col-12">
+            <!--ng-model directive binds the value of this input to variable "name"-->
+            <input type="text" class="form-control" ng-model="name" placeholder="Enter your name" />
+            <!--Accessing the variable "name" inside span-->
+            <h1>Hello {{name}}</h1>
+        </div>
+    </div>
+</body>
+</html>
