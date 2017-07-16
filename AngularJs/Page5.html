@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.notes = [
+                    { 'id': 1, 'label': 'First', 'done': false },
+                    { 'id': 2, 'label': 'Second', 'done': false },
+                    { 'id': 3, 'label': 'Third', 'done': true },
+                    { 'id': 4, 'label': 'Fourth', 'done': false },
+                ];
+            }]);
+    </script>
+</head>
+<body class="container" ng-app="notesApp">
+    <div class="row">
+        <div class="col-xs-12" ng-controller="MainCtrl as ctrl">
+            <!--This div is repated for all elements in ctrl.notes.-->
+            <div ng-repeat="note in ctrl.notes">
+                <h1>{{note.label}}</h1>
+                <p class="lead"k>{{note.done}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
