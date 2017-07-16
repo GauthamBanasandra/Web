@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<!--ng-app param specifies which module to load for the given HTML element.-->
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        // Creating a module 'notesApp'. If we drop the [] (2nd param), then 
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                this.message = 'Hello ';
+            }]);
+    </script>
+</head>
+<body class="container" ng-controller="MainCtrl as ctrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{ctrl.message}} friend</h1>
+        </div>
+    </div>
+</body>
+</html>
