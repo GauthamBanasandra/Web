@@ -67,6 +67,17 @@
                 <p>element_at_odd_pos: {{$odd}}</p>
                 <br />
             </div>
+            <hr />
+            <table border="1">
+                <!--Repeat sibling DOM elements using ng-repeat-start and ng-repeat-end.
+                    All the sibling elements between these two markers will be repeated.-->
+                <tr ng-repeat-start="note in ctrl.notes">
+                    <td>{{note.label}}</td>
+                </tr>
+                <tr ng-repeat-end>
+                    <td>Done: {{note.done}}</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
