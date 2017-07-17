@@ -44,16 +44,28 @@
     <div class="row">
         <div class="col-xs-12" ng-controller="MainCtrl as ctrl">
             <!--This div is repated for all elements in ctrl.notes.
-                Looping over an array in ng-repeat.-->
+                Looping over an array in ng-repeat-->
             <div ng-repeat="note in ctrl.notes">
-                <h1>{{note.label}}</h1>
-                <p class="lead" k>{{note.done}}</p>
+                <p class="lead">{{note.label}} {{note.done}}</p>
             </div>
             <hr />
-            <!--Looping over a map in ng-repeat.-->
+            <!--Looping over a map in ng-repeat-->
             <div ng-repeat="(author, note) in ctrl.moreNotes">
-                <h1>{{author}}</h1>
-                <p>{{note.label}}</p>
+                <p><strong>{{author}}</strong> {{note.label}}</p>
+            </div>
+            <hr />
+            <!--Helpers for ng-repeat-->
+            <div ng-repeat="note in ctrl.notes">
+                <p class="lead">{{note.label}} {{note.done}}</p>
+                <!--$first tells whether the current element of the repeater is the first element of list.
+                    Similar logic applies to the rest of the helper variables-->
+                <p>is_first_element: {{$first}}</p>
+                <p>is_middle_element: {{$middle}}</p>
+                <p>is_last_element: {{$last}}</p>
+                <p>element_index: {{$index}}</p>
+                <p>element_at_even_pos: {{$even}}</p>
+                <p>element_at_odd_pos: {{$odd}}</p>
+                <br />
             </div>
         </div>
     </div>
