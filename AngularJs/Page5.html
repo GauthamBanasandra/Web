@@ -20,16 +20,40 @@
                     { 'id': 3, 'label': 'Third', 'done': true },
                     { 'id': 4, 'label': 'Fourth', 'done': false },
                 ];
+                self.moreNotes = {
+                    shyam: {
+                        id: 1,
+                        label: 'First note',
+                        done: false
+                    },
+                    Misko: {
+                        id: 2,
+                        label: 'Second note',
+                        done: true
+                    },
+                    brad: {
+                        id: 3,
+                        label: 'Third note',
+                        done: false
+                    }
+                };
             }]);
     </script>
 </head>
 <body class="container" ng-app="notesApp">
     <div class="row">
         <div class="col-xs-12" ng-controller="MainCtrl as ctrl">
-            <!--This div is repated for all elements in ctrl.notes.-->
+            <!--This div is repated for all elements in ctrl.notes.
+                Looping over an array in ng-repeat.-->
             <div ng-repeat="note in ctrl.notes">
                 <h1>{{note.label}}</h1>
-                <p class="lead"k>{{note.done}}</p>
+                <p class="lead" k>{{note.done}}</p>
+            </div>
+            <hr />
+            <!--Looping over a map in ng-repeat.-->
+            <div ng-repeat="(author, note) in ctrl.moreNotes">
+                <h1>{{author}}</h1>
+                <p>{{note.label}}</p>
             </div>
         </div>
     </div>
