@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.submit = function () {
+                    console.log('User clicked submit with ', self.user);
+                };
+            }]);
+    </script>
+</head>
+<body class="container">
+    <!--ng-submit will be evaluated at the time of submitting the form-->
+    <form name="myForm" class="form-group-lg" ng-controller="MainCtrl as ctrl" ng-submit="ctrl.submit()">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--ng-minlength is a form validation directives-->
+                <input class="form-control" type="text" ng-model="ctrl.user.username" required ng-minlength="4" />              
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="form-control" type="password" ng-model="ctrl.user.password" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <!--ng-disabled will disable the control if the value is false.
+                    $invalid is a state which angular js will create and attach as a property to the form.
+                    $invalid is set to true if the form validation fails.-->
+                <input class="form-control" type="submit" value="Submit" ng-disabled="myForm.$invalid" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
