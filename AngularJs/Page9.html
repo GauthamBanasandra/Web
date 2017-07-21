@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <!--.username.ng-valid is chosen if uname is valid-->
+    <!--.username.ng-dirty.ng-invalid-required is chosen if uname is dirty and is empty and so on.
+        Notice how dirty and invalid required is chained-->
+    <style>        
+        .username.ng-valid {
+            background-color: green;
+        }
+
+        .username.ng-dirty.ng-invalid-required {
+            background-color: red;
+        }
+
+        .username.ng-dirty.ng-invalid-minlength {
+            background-color: lightpink;
+        }
+    </style>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.submit = function () {
+                    console.log('User clicked submit with ', self.user);
+                };
+            }]);
+    </script>
+</head>
+<body class="container">
+    <form name="myForm" class="form-group-lg" ng-controller="MainCtrl as ctrl" ng-submit="ctrl.submit()">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--AngularJS will apply validation and choose the class (username) from CSS-->
+                <input name="uname" class="form-control username" type="text" ng-model="ctrl.user.username" required ng-minlength="4" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input name="pwd" class="form-control" type="password" ng-model="ctrl.user.password" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <input class="form-control" type="submit" value="Submit" ng-disabled="myForm.$invalid" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
