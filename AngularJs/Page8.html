@@ -21,26 +21,29 @@
     </script>
 </head>
 <body class="container">
-    <!--ng-submit will be evaluated at the time of submitting the form-->
     <form name="myForm" class="form-group-lg" ng-controller="MainCtrl as ctrl" ng-submit="ctrl.submit()">
         <div class="row">
-            <div class="col-xs-12">
-                <!--ng-minlength and required are form validation directives-->
-                <!--Refer Page 56 for more form validation directives-->
-                <input class="form-control" type="text" ng-model="ctrl.user.username" required ng-minlength="4" />              
+            <div class="col-xs-12">                
+                <input name="uname" class="form-control" type="text" ng-model="ctrl.user.username" required ng-minlength="4" />
+                <!--Displaying error messages in forms-->
+                <span ng-show="myForm.uname.$dirty">
+                    <!--The moment we assign a name to any of the form elements, AngularJS creates a property under the form variable
+                        Each of these child elements will inherit the form validation states as the form variable as shown below-->
+                    <span ng-show="myForm.uname.$error.required">This field is required</span>
+                    <span ng-show="myForm.uname.$error.minlength">Minimum length required is 4</span>
+                    <span ng-show="myForm.uname.$invalid">This field is invalid</span>
+                </span>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <input class="form-control" type="password" ng-model="ctrl.user.password" required />
+                <input name="pwd" class="form-control" type="password" ng-model="ctrl.user.password" required />
+                <!--Chaining form validation values-->
+                <span ng-show="myForm.pwd.$error.required && myForm.pwd.$dirty">This field is required</span>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <!--ng-disabled will disable the control if the value is false.
-                    $invalid is a state which angular js will create and attach as a property to the form.
-                    $invalid is set to true if the form validation fails.-->
-                <!--Refer Page 55 for more states.-->
                 <input class="form-control" type="submit" value="Submit" ng-disabled="myForm.$invalid" />
             </div>
         </div>
