@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <style>
+        .username.ng-valid {
+            background-color: green;
+        }
+
+        .username.ng-dirty.ng-invalid-required {
+            background-color: red;
+        }
+
+        .username.ng-dirty.ng-invalid-minlength {
+            background-color: lightpink;
+        }
+    </style>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.submit = function () {
+                    console.log('User clicked submit with ', self.user);
+                };
+            }]);
+    </script>
+</head>
+<body class="container">
+    <form novalidate name="myForm" class="form-group-lg" ng-controller="MainCtrl as ctrl" ng-submit="ctrl.submit()">
+        <h1>Account</h1>
+        <div class="row">
+            <div class="col-xs-offset-3 col-xs-6">
+                <input placeholder="Username" name="uname" class="form-control username" type="text" ng-model="ctrl.user.username" required ng-minlength="4" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-offset-3 col-xs-6">
+                <input placeholder="Password" name="pwd" class="form-control" type="password" ng-model="ctrl.user.password" required />
+            </div>
+        </div>
+        <hr />
+        <h1>Profile</h1>
+        <!--Nested form
+            Nesting of forms isn't allowed in HTML. So, we use the AngularJS ng-form which can be nested and perform validation only to a part of elements of the form-->
+        <ng-form name="profile">
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input type="text" name="firstname" class="form-control" ng-model="ctrl.user.profile.firstname" placeholder="First name" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input type="text" name="middlename" class="form-control" ng-model="ctrl.user.profile.middlename" placeholder="Middle name" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input type="text" name="lastname" class="form-control" ng-model="ctrl.user.profile.lastname" placeholder="Last name" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <input type="date" name="dob" class="form-control" ng-model="ctrl.user.profile.dob" placeholder="Date of birth" />
+                </div>
+            </div>
+        </ng-form>
+        <!--The sub-form is accessible through "myForm.profile"-->
+        <span ng-show="myForm.profile.$dirty && myForm.profile.$invalid">Please check the profile information</span>
+        <hr />
+        <div class="row">
+            <div class="col-xs-offset-3 col-xs-3">
+                <input class="form-control" type="submit" value="Submit" ng-disabled="myForm.$invalid" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

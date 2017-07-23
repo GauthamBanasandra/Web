@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.sports = [
+                    { label: 'Basketball', selected: 'YES' },
+                    { label: 'Cricket', selected: 'NO' },
+                    { label: 'Soccer', selected: 'NO' },
+                    { label: 'Swimming', selected: 'YES' }
+                ];
+                self.countries = [
+                    { label: 'USA', id: 1 },
+                    { label: 'India', id: 2 },
+                    { label: 'Other', id: 3 }
+                ];
+                self.selectedCountryId = 2;
+                self.selectedCountry = self.countries[1];
+            }]);
+    </script>
+</head>
+<body class="container" ng-controller="MainCtrl as ctrl">
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <h1>What are your favourite sports?</h1>
+        </div>
+    </div>
+    <!--Checkboxes-->
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <div ng-repeat="sport in ctrl.sports">
+                <label class="label">{{sport.label}}</label>
+                <div>
+                    With binding:
+                    <input type="checkbox" ng-model="sport.selected" ng-true-value="YES" ng-false-value="NO" />
+                </div>
+                <div>
+                    Using ng-checked:
+                    <input type="checkbox" ng-checked="sport.selected === 'YES'" />
+                </div>
+                <div>
+                    Current state: {{sport.selected}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <!--Radio buttons-->
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6" ng-init="otherGender = 'other'">
+            <input type="radio" class="radio" name="gender" ng-model="user.gender" value="male" />Male
+            <input type="radio" class="radio" name="gender" ng-model="user.gender" value="female" />Female
+            <input type="radio" class="radio" name="gender" ng-model="user.gender" ng-value="otherGender" />{{otherGender}}
+        </div>
+    </div>
+    <hr />
+    <!--Combo boxes-->
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <!--Dynamically generating options using ng-options-->
+            <select ng-model="ctrl.selectedCountryId" ng-options="c.id as c.label for c in ctrl.countries"></select>
+            <p class="lead">Selected country ID: {{ctrl.selectedCountryId}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <select ng-model="ctrl.selectedCountry" ng-options="c.label for c in ctrl.countries"></select>
+            <p class="lead">Selected country: {{ctrl.selectedCountry}}</p>
+        </div>
+    </div>
+</body>
+</html>
