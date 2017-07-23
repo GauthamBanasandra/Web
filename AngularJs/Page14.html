@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', ['$http', function ($http) {
+                var self = this;
+                self.items = [];
+                // Simple HTTP GET using Promises.
+                $http.get('http://localhost:8000/api/note')
+                    .then(function (response) {
+                        self.items = response.data;
+                    }, function (errResponse) {
+                        console.error('Error while fetching notes');
+                    });
+            }]);
+    </script>
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+            <table class="table table-bordered table-striped" ng-controller="MainCtrl as ctrl">                
+                <tr ng-repeat="item in ctrl.items">
+                    <td>{{item.label}}</td>
+                    <td>{{item.author}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
