@@ -30,7 +30,9 @@
                         label: 'Item ' + self.list().length
                     });
                 };
-            }]) // Defining a service. This is instantiated only once. Refer Page 82 and 83 for other ways of creating a service.
+            }]) // Defining a service
+            // This is instantiated only once
+            // Refer Page 82 and 83 for other ways of creating a service
             .factory('ItemService', [function () {
                 var items = [
                     { id: 1, label: 'Item 0' },
@@ -43,7 +45,7 @@
                     add: function (item) {
                         items.push(item);
                     }
-                }
+                };
             }]);
     </script>
 </head>
@@ -52,9 +54,9 @@
         <div class="col-xs-offset-3 col-xs-6">
             <h1>Hello controllers</h1>
             <button ng-click="mainCtrl.open('first')" class="btn btn-primary">Open first</button>
-            <button ng-click="mainCtrl.open('second')" class="btn btn-primary">Open Second</button>            
+            <button ng-click="mainCtrl.open('second')" class="btn btn-primary">Open Second</button>
             <div ng-switch on="mainCtrl.tab">
-                <div ng-switch-when="first">                   
+                <div ng-switch-when="first">
                     <div ng-controller="SubCtrl as subCtrl">
                         <h3>First tab</h3>
                         <ul class="list-group">

@@ -43,7 +43,7 @@
 <body class="container" ng-app="notesApp">
     <div class="row">
         <div class="col-xs-12" ng-controller="MainCtrl as ctrl">
-            <!--This div is repated for all elements in ctrl.notes.
+            <!--This div is repeated for all elements in ctrl.notes
                 Looping over an array in ng-repeat-->
             <div ng-repeat="note in ctrl.notes">
                 <p class="lead">{{note.label}} {{note.done}}</p>

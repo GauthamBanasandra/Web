@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <link href="Styles/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <title>AngularJs</title>
+    <script>
+        angular.module('notesApp', [])
+            .controller('MainCtrl', ['$http', function ($http) {
+                var self = this;
+                self.items = [];
+                self.newTodo = {};
+                function fetchTodos() {
+                    $http.get('http://localhost:8000/api/note')
+                        .then(function (response) {
+                            self.items = response.data;
+                        }, function (errResponse) {
+                            console.error('Failed to fetch todos');
+                        });
+                }
+                fetchTodos();
+                self.add = function () {
+                    // HTTP POST request in AngularJS.
+                    $http.post('http://localhost:8000/api/note', self.newTodo)
+                        .then(fetchTodos)
+                        .then(function (response) {
+                            self.newTodo = {};
+                        });
+                };
+            }]) // Interceptor is implemented as a service
+            .factory('MyLoggingInterceptor', ['$q', function ($q) {
+                // It must return atleast one of the following APIs
+                // Use $q.reject when there's an error. It can be used in any (including request and response) to make a Promise fail
+                return {
+                    request: function (config) {
+                        console.log('Request made with:', config);
+                        return config;
+                    },
+                    requestError: function (rejection) {
+                        console.error('Request error due to:', rejection);
+                        return $q.reject(rejection);
+                    },
+                    response: function (config) {
+                        console.log('Response from server:', config);
+                        return config || $q.when(response);
+                    },
+                    responseError: function (rejection) {
+                        console.error('Error in reponse:', rejection);
+                        return $q.reject(rejection);
+                    }
+                };
+            }]) // Hooking up our interceptor with httpProvider
+            .config(['$httpProvider', function ($httpProvider) {
+                $httpProvider.interceptors.push('MyLoggingInterceptor');
+            }]);
+    </script>
+</head>
+<body class="container" ng-controller="MainCtrl as mainCtrl">
+    <div class="row">
+        <div class="col-xs-offset-3 col-xs-3">
+            <h1>Hello Servers!</h1>
+            <table class="table table-bordered table-striped">
+                <tr ng-repeat="todo in mainCtrl.items">
+                    <td>{{todo.label}}</td>
+                    <td>{{todo.author}}</td>
+                </tr>
+            </table>
+            <hr />
+            <form name="addForm" class="form-group" ng-submit="mainCtrl.add()">
+                <input class="form-control" type="text" ng-model="mainCtrl.newTodo.label" placeholder="Label" required />
+                <input class="form-control" type="text" ng-model="mainCtrl.newTodo.author" placeholder="Author" required />
+                <input class="form-control" type="submit" value="Add" ng-disabled="addForm.$invalid" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

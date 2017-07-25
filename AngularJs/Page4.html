@@ -13,7 +13,7 @@
     <script>
         angular.module('notesApp', [])
             .controller('MainCtrl', [function () {
-                // A good programming practice in JavaScript is to not use 'this' directly when it involves inner functions.
+                // A good programming practice in JavaScript is to not use 'this' directly when it involves inner functions
                 var self = this;
                 self.message = 'Hello ';
                 self.changeMessage = function () {
@@ -27,7 +27,7 @@
         <div ng-controller="MainCtrl as ctrl" class="col-xs-12">
             <input type="text" class="form-control" ng-model="name" />
             <h1>{{ctrl.message}} {{name}}</h1>
-            <!--ng-click evaluates an expression on click.-->
+            <!--ng-click evaluates an expression on click-->
             <button class="btn btn-primary" ng-click="ctrl.changeMessage()">Change message</button>
         </div>
     </div>
